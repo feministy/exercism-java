@@ -11,7 +11,7 @@ public class WordCount {
         List<String> words = Arrays.asList(sentence.split("\\s+"));
         for (String rawWord : words) {
             Set<String> currentList = dictionary.keySet();
-            String word = rawWord.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
+            String word = rawWord.replaceAll("\\W+", "").toLowerCase();
             if (currentList.contains(word)) {
                 Integer count = dictionary.get(word);
                 dictionary.replace(word, count, ++count);
